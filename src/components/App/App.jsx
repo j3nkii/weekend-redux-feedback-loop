@@ -4,7 +4,8 @@ import './App.css';
 import Feelings from '../Form/Feelings/Feelings';
 import Sleep from '../Form/Sleep/Sleep';
 import Journal from '../Form/Journal/Journal';
-import Meals from '../Form/Meals/Meals'
+import Meals from '../Form/Meals/Meals';
+import Review from '../Form/Review/Review';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Sleep />
       <Meals />
       <Journal />
+      <Review />
     </div>
   );
 }
