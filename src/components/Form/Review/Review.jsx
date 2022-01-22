@@ -5,7 +5,6 @@ import axios from 'axios';
 export default function Review(){
     const journalEntry = useSelector(store => store.formReducer)
     console.log(journalEntry);
-
     const onSubmit = () => {
         axios.post('/form', journalEntry).then(res => {
             console.log('POSTING TO /form', res);
@@ -13,9 +12,7 @@ export default function Review(){
             console.log('POST FAILED /form', err);
         })
     }
-
-    return (
-        <>
+    return (<>
             <h2>Daily reflection review</h2>
             <h3>Feeling:</h3>
             <h4>{journalEntry.feeling}</h4>
@@ -30,6 +27,5 @@ export default function Review(){
             >
                 Submit
             </button>
-        </>
-    )
+        </>)
 }

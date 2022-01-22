@@ -1,10 +1,10 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 
 export default function Journal(){
     const dispatch = useDispatch();
     const [journal, setJournal] = useState('');
-    console.log(journal);
 
     const onNext = () => {
         dispatch({
@@ -13,17 +13,15 @@ export default function Journal(){
         })
     }
 
-    return (
-        <>
+    return (<>
             <h2>Journal Entry</h2>
             <input 
                 type="text"
                 value={journal}
                 onChange={evt => setJournal(evt.target.value)}
             />
-            <button onClick={onNext}>
+            <Link to="/review" onClick={onNext}>
                 Next
-            </button>
-        </>
-    )
+            </Link>
+        </>)
 }
