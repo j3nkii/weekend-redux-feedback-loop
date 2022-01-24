@@ -7,14 +7,12 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-let formState = {
-    feeling: '',
-    sleep: '',
-    meals: '',
-    journal: '',
-}
-
-const formReducer = (state = formState, action) => {
+const formReducer = (state = {
+        feeling: '',
+        sleep: '',
+        meals: '',
+        journal: '',
+    }, action) => {
     switch (action.type) {
         case 'ADD_FEELING':
             return state = {...state, feeling: action.payload}
@@ -26,7 +24,7 @@ const formReducer = (state = formState, action) => {
             return state = {...state, journal: action.payload}
     }
     return state;
-    }
+}
 
 const store = createStore(
     combineReducers({
